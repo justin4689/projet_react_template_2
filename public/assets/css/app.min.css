@@ -55,6 +55,11 @@
   color: #fff;
   background-size: cover;
 }
+
+/* Survol des éléments du sous-menu dans la sidebar */
+.vertical-menu #sidebar-menu .sub-menu li a:hover {
+  color: #0099ff;
+}
 .search-wrap {
   background-color: #fff;
   color: #343a40;
@@ -3243,7 +3248,7 @@ div.dataTables_wrapper div.dataTables_filter input {
 .text-primary {
   color: #0099ff !important;
 }
- .btn-primary {
+.btn-primary {
   background-color: #0099ff !important;
 }
 .authentication-bg .bg-overlay {

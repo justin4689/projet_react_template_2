@@ -138,6 +138,7 @@ function DataTable<TData>({
                     ? "btn-primary"
                     : "btn-outline-secondary"
                 }`}
+                style={{ minWidth: "30px" }}
                 onClick={() => table.setPageIndex(index)}
               >
                 {index + 1}
