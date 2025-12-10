@@ -1,0 +1,12 @@
+/* Rotation de l'icône chevron des liens .has-arrow du sidebar
+   en fonction de la classe Bootstrap .collapsed */
+
+/* Fermé */
+#sidebar-menu .has-arrow.collapsed:after {
+  transform: rotate(0deg);
+}
+
+/* Ouvert */
+#sidebar-menu .has-arrow:not(.collapsed):after {
+  transform: rotate(90deg);
+}
