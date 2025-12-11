@@ -1743,6 +1743,8 @@ body[data-layout="horizontal"][data-layout-size="boxed"] .navbar-header {
   margin-left: -8px;
   margin-bottom: -12px;
 }
+
+
 .button-items .btn {
   margin-bottom: 12px;
   margin-left: 8px;
@@ -3667,6 +3669,16 @@ div.dataTables_wrapper div.dataTables_filter input {
   border-radius: 50%;
   right: 0;
 }
+
+.btn-outline-white {
+  color: #fff;
+  border-color: #fff;
+}
+
+.btn-outline-white:hover {
+  color: black;
+  background-color: #fff;
+}
 .chat-noti-dropdown .btn {
   padding: 6px;
   -webkit-box-shadow: none;
@@ -4136,3 +4148,4 @@ div.dataTables_wrapper div.dataTables_filter input {
   box-shadow: 0 0 0 0.15rem rgba(0, 153, 255, 0.25);
 }
 /*# sourceMappingURL=app.min.css.map */
+

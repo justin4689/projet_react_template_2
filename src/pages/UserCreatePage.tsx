@@ -24,12 +24,14 @@ function UserCreatePage() {
               </div>
               <div className="col-sm-6 text-sm-end mt-3 mt-sm-0">
                 <Link to="/dashboard/user-create">
-                  <button className="btn btn-outline-warning me-2">Nouveau</button>
+                  <button className="btn btn-outline-white me-2">
+                    Nouveau
+                  </button>
                 </Link>
                 <Link to="/dashboard">
-                  <button className="btn btn-outline-danger me-2">Lister</button>
+                  <button className="btn btn-outline-white me-2">Lister</button>
                 </Link>
-                <button className="btn btn-outline-success">Rechercher</button>
+                <button className="btn btn-outline-white">Rechercher</button>
               </div>
             </div>
           </div>
@@ -47,16 +49,11 @@ function UserCreatePage() {
                 <div className="card">
                   {" "}
                   <form className="needs-validation">
+                    <h4 className="ps-4 pt-3 header-title">
+                      Formulaire en une colonne
+                    </h4>
+                    <hr className="mb-0" />
                     <div className="card-body">
-                      {" "}
-                      <h4 className="header-title">
-                        {" "}
-                        Bootstrap Validation - Normal{" "}
-                      </h4>{" "}
-                      <p className="card-title-desc">
-                        Exemple de formulaire en une colonne avec plusieurs
-                        types de champs.
-                      </p>
                       {/* Texte simple */}
                       <div className="mb-3">
                         <label htmlFor="fullName" className="form-label">
@@ -216,6 +213,20 @@ function UserCreatePage() {
                           Utilisateur actif (checkbox)
                         </label>
                       </div>
+
+                      <div className="form-check form-switch mb-3" dir="ltr">
+                        <input
+                          type="checkbox"
+                          className="form-check-input"
+                          id="customSwitch1"
+                        />
+                        <label
+                          className="form-check-label"
+                          htmlFor="customSwitch1"
+                        >
+                          Toggle this switch element
+                        </label>
+                      </div>
                     </div>
                     <hr />
                     <div className="text-end pt-2 pb-4 pe-5">
@@ -234,11 +245,11 @@ function UserCreatePage() {
             <div className="now">
               <div className="card">
                 <form>
+                  <h4 className="ps-4 pt-3 header-title">
+                    Formulaire en deux colonnes
+                  </h4>
+                  <hr className="mb-0" />
                   <div className="card-body">
-                    <h4 className="header-title">
-                      Formulaire en deux colonnes
-                    </h4>
-
                     {/* Ligne 1 : text + email */}
                     <div className="row">
                       <div className="col-md-6">
@@ -368,6 +379,63 @@ function UserCreatePage() {
                         </div>
                       </div>
                     </div>
+
+                    <div className="row">
+                      <div className="col-md-6">
+                        <div className="mb-3">
+                          <label className="form-label d-block">
+                            Genre (radio)
+                          </label>
+                          <div className="form-check form-check-inline">
+                            <input
+                              className="form-check-input"
+                              type="radio"
+                              name="gender"
+                              id="genderMale"
+                              value="male"
+                            />
+                            <label
+                              className="form-check-label"
+                              htmlFor="genderMale"
+                            >
+                              Homme
+                            </label>
+                          </div>
+                          <div className="form-check form-check-inline">
+                            <input
+                              className="form-check-input"
+                              type="radio"
+                              name="gender"
+                              id="genderFemale"
+                              value="female"
+                            />
+                            <label
+                              className="form-check-label"
+                              htmlFor="genderFemale"
+                            >
+                              Femme
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="col-md-6">
+                        <div className="mb-3">
+                          <div className="form-check form-switch" dir="ltr">
+                            <input
+                              type="checkbox"
+                              className="form-check-input"
+                              id="customSwitch1"
+                            />
+                            <label
+                              className="form-check-label"
+                              htmlFor="customSwitch1"
+                            >
+                              Toggle this switch element
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                   <hr />
 
@@ -386,11 +454,11 @@ function UserCreatePage() {
             <div className="now mt-4  ">
               <div className="card">
                 <form>
+                  <h4 className="ps-4 pt-3 header-title">
+                    Formulaire en trois colonnes
+                  </h4>
+                  <hr className="mb-0" />
                   <div className="card-body">
-                    <h4 className="header-title">
-                      Formulaire en trois colonnes
-                    </h4>
-
                     {/* Ligne 1 : trois textes */}
                     <div className="row">
                       <div className="col-md-4">
@@ -526,6 +594,61 @@ function UserCreatePage() {
                           >
                             Utilisateur actif (checkbox)
                           </label>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="row">
+                      <div className="col-md-4">
+                        <div className="mb-3">
+                          <div className="form-check form-switch" dir="ltr">
+                            <input
+                              type="checkbox"
+                              className="form-check-input"
+                              id="customSwitch1"
+                            />
+                            <label
+                              className="form-check-label"
+                              htmlFor="customSwitch1"
+                            >
+                              Toggle this switch element
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="col-md-4">
+                       <div className="mb-3">
+                         
+                          <div className="form-check form-check-inline">
+                            <input
+                              className="form-check-input"
+                              type="radio"
+                              name="gender"
+                              id="genderMale"
+                              value="male"
+                            />
+                            <label
+                              className="form-check-label"
+                              htmlFor="genderMale"
+                            >
+                              Homme
+                            </label>
+                          </div>
+                          <div className="form-check form-check-inline">
+                            <input
+                              className="form-check-input"
+                              type="radio"
+                              name="gender"
+                              id="genderFemale"
+                              value="female"
+                            />
+                            <label
+                              className="form-check-label"
+                              htmlFor="genderFemale"
+                            >
+                              Femme
+                            </label>
+                          </div>
                         </div>
                       </div>
                     </div>

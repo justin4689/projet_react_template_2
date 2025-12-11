@@ -343,16 +343,16 @@ function UserList() {
               <div className="col-sm-6 text-sm-end mt-3 mt-sm-0">
 
                 <Link to="/dashboard/user-create">
-                <button  className="btn btn-outline-warning me-2">
+                <button  className="btn btn-outline-white me-2">
                   Nouveau
                 </button>
                 </Link>
                 <Link to="/dashboard">
-                <button  className="btn btn-outline-danger me-2">
+                <button  className="btn btn-outline-white me-2">
                   Lister
                 </button>
                 </Link>
-                <button  className="btn btn-outline-success">
+                <button  className="btn btn-outline-white">
                   Rechercher
                 </button>
               </div>

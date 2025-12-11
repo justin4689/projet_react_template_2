@@ -17,7 +17,7 @@ const TopBar = () => {
     <div>
       <header id="page-topbar">
         <div className="navbar-header">
-          <div className="d-flex">
+          <div className="d-flex align-items-center">
             <div className="navbar-brand-box">
               <a href="index.php" className="logo logo-dark">
                 <span className="logo-sm">
@@ -46,6 +46,8 @@ const TopBar = () => {
             >
               <i className="mdi mdi-menu"></i>
             </button>
+
+            <h3 className="text-bold  text-md m-0">Gestion des factures</h3>
           </div>
 
           <div className="d-flex">
