@@ -1413,9 +1413,58 @@ body[data-layout="horizontal"][data-layout-size="boxed"] .navbar-header {
 .font-size-22 {
   font-size: 22px !important;
 }
+.dataTables_wrapper .dataTables_paginate .page-item.active .page-link {
+  background-color: #0099ff;
+  border-color: #0099ff;
+  color: #fff;
+}
+
+.dataTables_wrapper .dataTables_paginate .page-link:hover {
+  background-color: #0099ff;
+  border-color: #0099ff;
+  color: #fff;
+}
 .font-size-24 {
   font-size: 24px !important;
 }
+
+/* Au survol (optionnel) */
+table#datatable.dataTable tbody tr:hover {
+  background-color: #e8eef5 !important;
+}
+
+div.dataTables_wrapper table.dataTable tbody td.datatable-actions {
+  display: table-cell !important;
+  vertical-align: middle;
+  white-space: nowrap !important;
+  text-align: left;
+}
+
+div.dataTables_wrapper table.dataTable th:last-child,
+div.dataTables_wrapper table.dataTable tbody td.datatable-actions {
+  width: 75px !important;
+  min-width: 75px !important;
+}
+
+div.dataTables_wrapper table.dataTable tbody td.datatable-actions a {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: flex-start;
+  vertical-align: middle;
+}
+
+div.dataTables_wrapper
+  table.dataTable
+  tbody
+  td.datatable-actions
+  a:not(:last-child) {
+  margin-right: 0.75rem;
+}
+
+div.dataTables_wrapper table.dataTable tbody td:last-child {
+  white-space: nowrap !important;
+}
+
 .media {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1743,7 +1792,6 @@ body[data-layout="horizontal"][data-layout-size="boxed"] .navbar-header {
   margin-left: -8px;
   margin-bottom: -12px;
 }
-
 
 .button-items .btn {
   margin-bottom: 12px;
@@ -3210,6 +3258,7 @@ div.dataTables_wrapper div.dataTables_filter input {
   border-bottom: 16px solid #0099ff;
 }
 .jvectormap-label {
+  display: none;
   border: none;
   background: #343a40;
   color: #f9fafc;
@@ -4147,5 +4196,143 @@ div.dataTables_wrapper div.dataTables_filter input {
   border-color: #0099ff;
   box-shadow: 0 0 0 0.15rem rgba(0, 153, 255, 0.25);
 }
+
+/* Personnalisation forte des couleurs de la table #datatable (écrase Bootstrap/DataTables) */
+
+table.table-bordered.dataTable th, table.table-bordered.dataTable td 
+/* Lignes paires (even) du même tableau */
+table.table-bordered.dataTable.table-striped
+  > tbody
+  > tr:nth-of-type(even)
+  > th,
+table.table-bordered.dataTable.table-striped
+  > tbody
+  > tr:nth-of-type(even)
+  > td {
+  background-color: #f5f7fa !important; /* 2ème, 4ème, 6ème, ... ligne */
+}
+
+h3 {
+  margin: 0;
+}
+.mx-12 {
+  margin-right: 12px !important;
+}
+
+.pagination {
+  padding-top: 12px;
+  gap: 4px;
+  --bs-pagination-font-size: 0.7rem;
+}
+
+
+.pagination .page-link:hover,
+.pagination .page-link:focus {
+  color: #0099ff;
+}
+
+.pagination .page-item.active .page-link {
+  background-color: #0099ff;
+  border-color: #0099ff;
+  color: #ffffff;
+}
+
+.pagination .page-item.disabled .page-link {
+  color: #6c757d;
+}
+
+.form-check-label {
+  color: #495057 !important;
+}
+.btn-primary {
+  background-color: #0099ff !important;
+}
+
+.btn-primary:hover {
+}
+
+.btn-outline {
+  border-color: #0099ff !important;
+
+  color: #0099ff !important;
+}
+
+.btn-outline:hover {
+  background-color: #0099ff !important;
+
+  color: #ffffff !important;
+}
+
+.details-title {
+  padding: 0.4rem 0.5rem !important;
+  margin-bottom: 0;
+  margin-top: 0;
+  font-size: 0.8rem;
+
+  color: #313a46;
+}
+
+.details-value {
+  padding: 0.4rem 0.5rem !important;
+  vertical-align: middle;
+  font-size: 0.85rem;
+  line-height: 1.3;
+
+  color: #6c757d;
+}
+
+html[data-bs-theme="dark"] .details-title {
+  color: #6c757d;
+}
+.hr-dashed {
+  border-top: 2px dashed #dee2e6;
+}
+
 /*# sourceMappingURL=app.min.css.map */
 
+.nav-tabs .nav-link:hover,
+.nav-tabs .nav-link:focus,
+.nav-tabs .nav-link.active {
+  color: #0099ff;
+}
+
+.bg-primary {
+  background-color: #0099ff !important;
+}
+.badge-soft-primary {
+  color: #0099ff;
+  background-color: rgba(0, 153, 255, 0.18);
+}
+
+.badge-soft-primary[href]:hover,
+.badge-soft-primary[href]:focus {
+  color: #0099ff;
+  text-decoration: none;
+  background-color: rgba(0, 153, 255, 0.4);
+}
+
+.table-bordered {
+  border-collapse: collapse !important;
+}
+
+table.dataTable.table-bordered {
+  border-collapse: collapse !important;
+  border-spacing: 0 !important;
+}
+
+.table-bordered > :not(caption) > * > * {
+  border: 1px #dce1e6 solid !important;
+}
+/* #eaedf1  */
+
+/* #ced4da  */
+
+/* edf1f5 */
+
+/* #dce1e6 */
+
+table.table-bordered.dataTable th:last-child,
+table.table-bordered.dataTable td:last-child {
+  display: table-cell !important;
+  vertical-align: middle;
+}

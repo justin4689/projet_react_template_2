@@ -9,6 +9,7 @@ import ForgotPassword from "./pages/ForgotPassword";
 import ResetPassword from "./pages/ResetPassword";
 import UserList from "./pages/UserList";
 import UserCreatePage from "./pages/UserCreatePage";
+import { UserDetailsPage } from "./pages/UserDetailsPage";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/dashboard" element={<DashboardLayout />}>
             <Route index element={<UserList />} /> 
             <Route path="user-create" element={<UserCreatePage/>} />
+            <Route path="user-details" element={<UserDetailsPage/>} />
           </Route>
         </Routes>
       </BrowserRouter>

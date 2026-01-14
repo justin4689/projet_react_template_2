@@ -315,6 +315,56 @@ function UserList() {
       { header: "Age", accessorKey: "age" },
       { header: "Start date", accessorKey: "startDate" },
       { header: "Salary", accessorKey: "salary" },
+      {
+        header: "Action",
+        id: "action",
+        accessorFn: () => "",
+        meta: {
+          cellClassName: "datatable-actions",
+        },
+        cell: () => (
+          <div className="d-flex gap-2">
+            <Link
+              to="/dashboard/user-details"
+              className="text-warning"
+              data-bs-container="body"
+              data-bs-toggle="tooltip"
+              data-bs-placement="top"
+              title="View"
+            >
+              <i className="mdi mdi-eye"></i>
+            </Link>
+
+            <a
+              href="#"
+              className="text-primary"
+              data-bs-container="body"
+              data-bs-toggle="tooltip"
+              data-bs-placement="top"
+              title="Edit"
+              onClick={(e) => {
+                e.preventDefault();
+              }}
+            >
+              <i className="mdi mdi-pencil"></i>
+            </a>
+
+            <a
+              href="#"
+              className="text-danger"
+              data-bs-container="body"
+              data-bs-toggle="tooltip"
+              data-bs-placement="top"
+              title="Delete"
+              onClick={(e) => {
+                e.preventDefault();
+              }}
+            >
+              <i className="mdi mdi-trash-can"></i>
+            </a>
+          </div>
+        ),
+      },
     ],
     []
   );
@@ -341,20 +391,110 @@ function UserList() {
                 </div>
               </div>
               <div className="col-sm-6 text-sm-end mt-3 mt-sm-0">
-
                 <Link to="/dashboard/user-create">
-                <button  className="btn btn-outline-white me-2">
-                  Nouveau
-                </button>
+                  <button className="btn btn-outline-white me-2">
+                    Nouveau
+                  </button>
                 </Link>
                 <Link to="/dashboard">
-                <button  className="btn btn-outline-white me-2">
-                  Lister
-                </button>
+                  <button className="btn btn-outline-white me-2">Lister</button>
                 </Link>
-                <button  className="btn btn-outline-white">
-                  Rechercher
-                </button>
+               <button
+                    className="btn btn-outline-white mx-12"
+                    data-bs-toggle="modal"
+                    data-bs-target=".staticBackdrop"
+                  >
+                    Rechercher
+                  </button>
+
+                  <div
+                    className="modal fade staticBackdrop"
+                    data-bs-backdrop="static"
+                    data-bs-keyboard="false"
+                    tabIndex={-1}
+                    role="dialog"
+                    aria-labelledby="staticBackdropLabel"
+                    aria-hidden="true"
+                  >
+                    <div
+                      className="modal-dialog modal-dialog-centered"
+                      role="document"
+                    >
+                      <div className="modal-content">
+                        <form className="" action="#">
+                          <div className="modal-header">
+                            <h5 className="modal-title" id="staticBackdropLabel">
+                              Rechercher
+                            </h5>
+                            <button
+                              type="button"
+                              className="btn-close"
+                              data-bs-dismiss="modal"
+                              aria-label="Close"
+                            ></button>
+                          </div>
+                          <div className="modal-body">
+                            <div className="mb-3">
+                              <input
+                                className="form-control"
+                                type="email"
+                                id="username"
+                                required
+                                placeholder="Rechercher..."
+                              />
+                            </div>
+
+                            <div className="mb-3 d-flex gap-3">
+                              <div className="form-check">
+                                <input
+                                  type="checkbox"
+                                  className="form-check-input"
+                                  id="checkName"
+                                />
+                                <label className="form-check-label" htmlFor="checkName">
+                                  name
+                                </label>
+                              </div>
+                              <div className="form-check">
+                                <input
+                                  type="checkbox"
+                                  className="form-check-input"
+                                  id="checkPosition"
+                                />
+                                <label
+                                  className="form-check-label"
+                                  htmlFor="checkPosition"
+                                >
+                                  position
+                                </label>
+                              </div>
+                              <div className="form-check">
+                                <input
+                                  type="checkbox"
+                                  className="form-check-input"
+                                  id="checkSalary"
+                                />
+                                <label
+                                  className="form-check-label"
+                                  htmlFor="checkSalary"
+                                >
+                                  salary
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div className="modal-footer">
+                            <div>
+                              <button className="btn btn-outline" type="submit">
+                                Rechercher
+                              </button>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
               </div>
             </div>
           </div>

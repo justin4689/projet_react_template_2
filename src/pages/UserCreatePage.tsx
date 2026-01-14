@@ -31,7 +31,102 @@ function UserCreatePage() {
                 <Link to="/dashboard">
                   <button className="btn btn-outline-white me-2">Lister</button>
                 </Link>
-                <button className="btn btn-outline-white">Rechercher</button>
+                 <button
+                    className="btn btn-outline-white mx-12"
+                    data-bs-toggle="modal"
+                    data-bs-target=".staticBackdrop"
+                  >
+                    Rechercher
+                  </button>
+
+                  <div
+                    className="modal fade staticBackdrop"
+                    data-bs-backdrop="static"
+                    data-bs-keyboard="false"
+                    tabIndex={-1}
+                    role="dialog"
+                    aria-labelledby="staticBackdropLabel"
+                    aria-hidden="true"
+                  >
+                    <div
+                      className="modal-dialog modal-dialog-centered"
+                      role="document"
+                    >
+                      <div className="modal-content">
+                        <form className="" action="#">
+                          <div className="modal-header">
+                            <h5 className="modal-title" id="staticBackdropLabel">
+                              Rechercher
+                            </h5>
+                            <button
+                              type="button"
+                              className="btn-close"
+                              data-bs-dismiss="modal"
+                              aria-label="Close"
+                            ></button>
+                          </div>
+                          <div className="modal-body">
+                            <div className="mb-3">
+                              <input
+                                className="form-control"
+                                type="email"
+                                id="username"
+                                required
+                                placeholder="Rechercher..."
+                              />
+                            </div>
+
+                            <div className="mb-3 d-flex gap-3">
+                              <div className="form-check">
+                                <input
+                                  type="checkbox"
+                                  className="form-check-input"
+                                  id="checkName"
+                                />
+                                <label className="form-check-label" htmlFor="checkName">
+                                  name
+                                </label>
+                              </div>
+                              <div className="form-check">
+                                <input
+                                  type="checkbox"
+                                  className="form-check-input"
+                                  id="checkPosition"
+                                />
+                                <label
+                                  className="form-check-label"
+                                  htmlFor="checkPosition"
+                                >
+                                  position
+                                </label>
+                              </div>
+                              <div className="form-check">
+                                <input
+                                  type="checkbox"
+                                  className="form-check-input"
+                                  id="checkSalary"
+                                />
+                                <label
+                                  className="form-check-label"
+                                  htmlFor="checkSalary"
+                                >
+                                  salary
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div className="modal-footer">
+                            <div>
+                              <button className="btn btn-outline" type="submit">
+                                Rechercher
+                              </button>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
               </div>
             </div>
           </div>
@@ -39,349 +134,108 @@ function UserCreatePage() {
         {/* end page title */}
 
         <div className="container-fluid">
-          <div className="page-content-wrapper mb-5 pb-3">
-            {/* Contenu dynamique */}
+            <div className="page-content-wrapper mb-5 pb-3">
+              {/* Contenu dynamique */}
 
-            <div className="row">
-              {" "}
-              <div className="col-lg-12">
+              <div className="row">
                 {" "}
-                <div className="card">
+                <div className="col-lg-12">
                   {" "}
-                  <form className="needs-validation">
-                    <h4 className="ps-4 pt-3 header-title">
-                      Formulaire en une colonne
-                    </h4>
-                    <hr className="mb-0" />
-                    <div className="card-body">
-                      {/* Texte simple */}
-                      <div className="mb-3">
-                        <label htmlFor="fullName" className="form-label">
-                          Nom complet (text)
-                        </label>
-                        <input
-                          type="text"
-                          className="form-control"
-                          id="fullName"
-                          placeholder="Nom complet"
-                          required
-                        />
-                      </div>
-                      {/* Email */}
-                      <div className="mb-3">
-                        <label htmlFor="email" className="form-label">
-                          Email (email)
-                        </label>
-                        <input
-                          type="email"
-                          className="form-control"
-                          id="email"
-                          placeholder="email@exemple.com"
-                          required
-                        />
-                      </div>
-                      {/* Mot de passe */}
-                      <div className="mb-3">
-                        <label htmlFor="password" className="form-label">
-                          Mot de passe (password)
-                        </label>
-                        <input
-                          type="password"
-                          className="form-control"
-                          id="password"
-                          placeholder="Mot de passe"
-                          required
-                        />
-                      </div>
-                      {/* Téléphone */}
-                      <div className="mb-3">
-                        <label htmlFor="phone" className="form-label">
-                          Téléphone (tel)
-                        </label>
-                        <input
-                          type="tel"
-                          className="form-control"
-                          id="phone"
-                          placeholder="Ex: +225 01 23 45 67"
-                        />
-                      </div>
-                      {/* Nombre */}
-                      <div className="mb-3">
-                        <label htmlFor="age" className="form-label">
-                          Âge (number)
-                        </label>
-                        <input
-                          type="number"
-                          className="form-control"
-                          id="age"
-                          min={0}
-                          max={120}
-                        />
-                      </div>
-                      {/* Date */}
-                      <div className="mb-3">
-                        <label htmlFor="birthdate" className="form-label">
-                          Date de naissance (date)
-                        </label>
-                        <input
-                          type="date"
-                          className="form-control"
-                          id="birthdate"
-                        />
-                      </div>
-                      {/* Fichier */}
-                      <div className="mb-3">
-                        <label htmlFor="avatar" className="form-label">
-                          Avatar (file)
-                        </label>
-                        <input
-                          type="file"
-                          className="form-control"
-                          id="avatar"
-                        />
-                      </div>
-                      {/* Radio */}
-                      <div className="mb-3">
-                        <label className="form-label d-block">
-                          Genre (radio)
-                        </label>
-                        <div className="form-check form-check-inline">
-                          <input
-                            className="form-check-input"
-                            type="radio"
-                            name="gender"
-                            id="genderMale"
-                            value="male"
-                          />
-                          <label
-                            className="form-check-label"
-                            htmlFor="genderMale"
-                          >
-                            Homme
-                          </label>
-                        </div>
-                        <div className="form-check form-check-inline">
-                          <input
-                            className="form-check-input"
-                            type="radio"
-                            name="gender"
-                            id="genderFemale"
-                            value="female"
-                          />
-                          <label
-                            className="form-check-label"
-                            htmlFor="genderFemale"
-                          >
-                            Femme
-                          </label>
-                        </div>
-                      </div>
-                      {/* Select */}
-                      <div className="mb-3">
-                        <label htmlFor="role" className="form-label">
-                          Rôle (select)
-                        </label>
-                        <select className="form-select" id="role">
-                          <option value="">Choisir...</option>
-                          <option value="admin">Administrateur</option>
-                          <option value="user">Utilisateur</option>
-                          <option value="guest">Invité</option>
-                        </select>
-                      </div>
-                      {/* Textarea */}
-                      <div className="mb-3">
-                        <label htmlFor="bio" className="form-label">
-                          Biographie (textarea)
-                        </label>
-                        <textarea
-                          className="form-control"
-                          id="bio"
-                          rows={3}
-                          placeholder="Quelques mots sur l'utilisateur"
-                        ></textarea>
-                      </div>
-                      {/* Checkbox */}
-                      <div className="form-check mb-3">
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          value=""
-                          id="isActive"
-                          defaultChecked
-                        />
-                        <label className="form-check-label" htmlFor="isActive">
-                          Utilisateur actif (checkbox)
-                        </label>
-                      </div>
-
-                      <div className="form-check form-switch mb-3" dir="ltr">
-                        <input
-                          type="checkbox"
-                          className="form-check-input"
-                          id="customSwitch1"
-                        />
-                        <label
-                          className="form-check-label"
-                          htmlFor="customSwitch1"
-                        >
-                          Toggle this switch element
-                        </label>
-                      </div>
-                    </div>
-                    <hr />
-                    <div className="text-end pt-2 pb-4 pe-5">
-                      <button className="btn btn-secondary me-4" type="submit">
-                        Reinitialiser
-                      </button>
-                      <button className="btn btn-primary" type="submit">
-                        Valider
-                      </button>
-                    </div>
-                  </form>
-                </div>{" "}
-              </div>{" "}
-            </div>
-
-            <div className="now">
-              <div className="card">
-                <form>
-                  <h4 className="ps-4 pt-3 header-title">
-                    Formulaire en deux colonnes
-                  </h4>
-                  <hr className="mb-0" />
-                  <div className="card-body">
-                    {/* Ligne 1 : text + email */}
-                    <div className="row">
-                      <div className="col-md-6">
+                  <div className="card">
+                    {" "}
+                    <form className="needs-validation">
+                      <h4 className="ps-4 pt-3 header-title">
+                        Formulaire en une colonne
+                      </h4>
+                      <hr className="mb-0" />
+                      <div className="card-body">
+                        {/* Texte simple */}
                         <div className="mb-3">
-                          <label
-                            htmlFor="twoColFullName"
-                            className="form-label"
-                          >
+                          <label htmlFor="fullName" className="form-label">
                             Nom complet (text)
                           </label>
                           <input
                             type="text"
                             className="form-control"
-                            id="twoColFullName"
+                            id="fullName"
                             placeholder="Nom complet"
+                            required
                           />
                         </div>
-                      </div>
-                      <div className="col-md-6">
+                        {/* Email */}
                         <div className="mb-3">
-                          <label htmlFor="twoColEmail" className="form-label">
+                          <label htmlFor="email" className="form-label">
                             Email (email)
                           </label>
                           <input
                             type="email"
                             className="form-control"
-                            id="twoColEmail"
+                            id="email"
                             placeholder="email@exemple.com"
+                            required
                           />
                         </div>
-                      </div>
-                    </div>
-
-                    {/* Ligne 2 : password + téléphone */}
-                    <div className="row">
-                      <div className="col-md-6">
+                        {/* Mot de passe */}
                         <div className="mb-3">
-                          <label
-                            htmlFor="twoColPassword"
-                            className="form-label"
-                          >
+                          <label htmlFor="password" className="form-label">
                             Mot de passe (password)
                           </label>
                           <input
                             type="password"
                             className="form-control"
-                            id="twoColPassword"
+                            id="password"
                             placeholder="Mot de passe"
+                            required
                           />
                         </div>
-                      </div>
-                      <div className="col-md-6">
+                        {/* Téléphone */}
                         <div className="mb-3">
-                          <label htmlFor="twoColPhone" className="form-label">
+                          <label htmlFor="phone" className="form-label">
                             Téléphone (tel)
                           </label>
                           <input
                             type="tel"
                             className="form-control"
-                            id="twoColPhone"
+                            id="phone"
                             placeholder="Ex: +225 01 23 45 67"
                           />
                         </div>
-                      </div>
-                    </div>
-
-                    {/* Ligne 3 : âge + date */}
-                    <div className="row">
-                      <div className="col-md-6">
+                        {/* Nombre */}
                         <div className="mb-3">
-                          <label htmlFor="twoColAge" className="form-label">
+                          <label htmlFor="age" className="form-label">
                             Âge (number)
                           </label>
                           <input
                             type="number"
                             className="form-control"
-                            id="twoColAge"
+                            id="age"
+                            min={0}
+                            max={120}
                           />
                         </div>
-                      </div>
-                      <div className="col-md-6">
+                        {/* Date */}
                         <div className="mb-3">
-                          <label
-                            htmlFor="twoColBirthdate"
-                            className="form-label"
-                          >
+                          <label htmlFor="birthdate" className="form-label">
                             Date de naissance (date)
                           </label>
                           <input
                             type="date"
                             className="form-control"
-                            id="twoColBirthdate"
+                            id="birthdate"
                           />
                         </div>
-                      </div>
-                    </div>
-
-                    {/* Ligne 4 : rôle + actif */}
-                    <div className="row">
-                      <div className="col-md-6">
+                        {/* Fichier */}
                         <div className="mb-3">
-                          <label htmlFor="twoColRole" className="form-label">
-                            Rôle (select)
+                          <label htmlFor="avatar" className="form-label">
+                            Avatar (file)
                           </label>
-                          <select className="form-select" id="twoColRole">
-                            <option value="">Choisir...</option>
-                            <option value="admin">Administrateur</option>
-                            <option value="user">Utilisateur</option>
-                            <option value="guest">Invité</option>
-                          </select>
-                        </div>
-                      </div>
-                      <div className="col-md-6 d-flex align-items-center">
-                        <div className="form-check mt-3 mt-md-0">
                           <input
-                            className="form-check-input"
-                            type="checkbox"
-                            id="twoColIsActive"
-                            defaultChecked
+                            type="file"
+                            className="form-control"
+                            id="avatar"
                           />
-                          <label
-                            className="form-check-label"
-                            htmlFor="twoColIsActive"
-                          >
-                            Utilisateur actif (checkbox)
-                          </label>
                         </div>
-                      </div>
-                    </div>
-
-                    <div className="row">
-                      <div className="col-md-6">
+                        {/* Radio */}
                         <div className="mb-3">
                           <label className="form-label d-block">
                             Genre (radio)
@@ -417,255 +271,496 @@ function UserCreatePage() {
                             </label>
                           </div>
                         </div>
-                      </div>
-                      <div className="col-md-6">
+                        {/* Select */}
                         <div className="mb-3">
-                          <div className="form-check form-switch" dir="ltr">
-                            <input
-                              type="checkbox"
-                              className="form-check-input"
-                              id="customSwitch1"
-                            />
-                            <label
-                              className="form-check-label"
-                              htmlFor="customSwitch1"
-                            >
-                              Toggle this switch element
-                            </label>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <hr />
-
-                  <div className="text-end pt-2 pb-4 pe-5">
-                    <button className="btn btn-secondary me-4" type="submit">
-                      Reinitialiser
-                    </button>
-                    <button className="btn btn-primary" type="submit">
-                      Valider
-                    </button>
-                  </div>
-                </form>
-              </div>
-            </div>
-
-            <div className="now mt-4  ">
-              <div className="card">
-                <form>
-                  <h4 className="ps-4 pt-3 header-title">
-                    Formulaire en trois colonnes
-                  </h4>
-                  <hr className="mb-0" />
-                  <div className="card-body">
-                    {/* Ligne 1 : trois textes */}
-                    <div className="row">
-                      <div className="col-md-4">
-                        <div className="mb-3">
-                          <label
-                            htmlFor="threeColFullName"
-                            className="form-label"
-                          >
-                            Nom complet (text)
-                          </label>
-                          <input
-                            type="text"
-                            className="form-control"
-                            id="threeColFullName"
-                            placeholder="Nom complet"
-                          />
-                        </div>
-                      </div>
-                      <div className="col-md-4">
-                        <div className="mb-3">
-                          <label htmlFor="threeColEmail" className="form-label">
-                            Email (email)
-                          </label>
-                          <input
-                            type="email"
-                            className="form-control"
-                            id="threeColEmail"
-                            placeholder="email@exemple.com"
-                          />
-                        </div>
-                      </div>
-                      <div className="col-md-4">
-                        <div className="mb-3">
-                          <label
-                            htmlFor="threeColPassword"
-                            className="form-label"
-                          >
-                            Mot de passe (password)
-                          </label>
-                          <input
-                            type="password"
-                            className="form-control"
-                            id="threeColPassword"
-                            placeholder="Mot de passe"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                    {/* Ligne 2 : téléphone + âge + date */}
-                    <div className="row">
-                      <div className="col-md-4">
-                        <div className="mb-3">
-                          <label htmlFor="threeColPhone" className="form-label">
-                            Téléphone (tel)
-                          </label>
-                          <input
-                            type="tel"
-                            className="form-control"
-                            id="threeColPhone"
-                            placeholder="Ex: +225 01 23 45 67"
-                          />
-                        </div>
-                      </div>
-                      <div className="col-md-4">
-                        <div className="mb-3">
-                          <label htmlFor="threeColAge" className="form-label">
-                            Âge (number)
-                          </label>
-                          <input
-                            type="number"
-                            className="form-control"
-                            id="threeColAge"
-                          />
-                        </div>
-                      </div>
-                      <div className="col-md-4">
-                        <div className="mb-3">
-                          <label
-                            htmlFor="threeColBirthdate"
-                            className="form-label"
-                          >
-                            Date de naissance (date)
-                          </label>
-                          <input
-                            type="date"
-                            className="form-control"
-                            id="threeColBirthdate"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                    {/* Ligne 3 : rôle + fichier + actif */}
-                    <div className="row">
-                      <div className="col-md-4">
-                        <div className="mb-3">
-                          <label htmlFor="threeColRole" className="form-label">
+                          <label htmlFor="role" className="form-label">
                             Rôle (select)
                           </label>
-                          <select className="form-select" id="threeColRole">
+                          <select className="form-select" id="role">
                             <option value="">Choisir...</option>
                             <option value="admin">Administrateur</option>
                             <option value="user">Utilisateur</option>
                             <option value="guest">Invité</option>
                           </select>
                         </div>
-                      </div>
-                      <div className="col-md-4">
+                        {/* Textarea */}
                         <div className="mb-3">
-                          <label
-                            htmlFor="threeColAvatar"
-                            className="form-label"
-                          >
-                            Avatar (file)
+                          <label htmlFor="bio" className="form-label">
+                            Biographie (textarea)
                           </label>
-                          <input
-                            type="file"
+                          <textarea
                             className="form-control"
-                            id="threeColAvatar"
-                          />
+                            id="bio"
+                            rows={3}
+                            placeholder="Quelques mots sur l'utilisateur"
+                          ></textarea>
                         </div>
-                      </div>
-                      <div className="col-md-4 d-flex align-items-center">
-                        <div className="form-check mt-3 mt-md-0">
+                        {/* Checkbox */}
+                        <div className="form-check mb-3">
                           <input
                             className="form-check-input"
                             type="checkbox"
-                            id="threeColIsActive"
+                            value=""
+                            id="isActive"
                             defaultChecked
                           />
-                          <label
-                            className="form-check-label"
-                            htmlFor="threeColIsActive"
-                          >
+                          <label className="form-check-label" htmlFor="isActive">
                             Utilisateur actif (checkbox)
                           </label>
                         </div>
-                      </div>
-                    </div>
 
-                    <div className="row">
-                      <div className="col-md-4">
-                        <div className="mb-3">
-                          <div className="form-check form-switch" dir="ltr">
+                        <div className="form-check form-switch mb-3" dir="ltr">
+                          <input
+                            type="checkbox"
+                            className="form-check-input"
+                            id="customSwitch1"
+                          />
+                          <label
+                            className="form-check-label"
+                            htmlFor="customSwitch1"
+                          >
+                            Toggle this switch element
+                          </label>
+                        </div>
+                      </div>
+                      <hr />
+                      <div className="text-end pt-2 pb-4 pe-5">
+                        <button className="btn btn-secondary me-4" type="submit">
+                          Reinitialiser
+                        </button>
+                        <button className="btn btn-primary" type="submit">
+                          Valider
+                        </button>
+                      </div>
+                    </form>
+                  </div>{" "}
+                </div>{" "}
+              </div>
+
+              <div className="now">
+                <div className="card">
+                  <form>
+                    <h4 className="ps-4 pt-3 header-title">
+                      Formulaire en deux colonnes
+                    </h4>
+                    <hr className="mb-0" />
+                    <div className="card-body">
+                      {/* Ligne 1 : text + email */}
+                      <div className="row">
+                        <div className="col-md-6">
+                          <div className="mb-3">
+                            <label
+                              htmlFor="twoColFullName"
+                              className="form-label"
+                            >
+                              Nom complet (text)
+                            </label>
                             <input
-                              type="checkbox"
+                              type="text"
+                              className="form-control"
+                              id="twoColFullName"
+                              placeholder="Nom complet"
+                            />
+                          </div>
+                        </div>
+                        <div className="col-md-6">
+                          <div className="mb-3">
+                            <label htmlFor="twoColEmail" className="form-label">
+                              Email (email)
+                            </label>
+                            <input
+                              type="email"
+                              className="form-control"
+                              id="twoColEmail"
+                              placeholder="email@exemple.com"
+                            />
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Ligne 2 : password + téléphone */}
+                      <div className="row">
+                        <div className="col-md-6">
+                          <div className="mb-3">
+                            <label
+                              htmlFor="twoColPassword"
+                              className="form-label"
+                            >
+                              Mot de passe (password)
+                            </label>
+                            <input
+                              type="password"
+                              className="form-control"
+                              id="twoColPassword"
+                              placeholder="Mot de passe"
+                            />
+                          </div>
+                        </div>
+                        <div className="col-md-6">
+                          <div className="mb-3">
+                            <label htmlFor="twoColPhone" className="form-label">
+                              Téléphone (tel)
+                            </label>
+                            <input
+                              type="tel"
+                              className="form-control"
+                              id="twoColPhone"
+                              placeholder="Ex: +225 01 23 45 67"
+                            />
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Ligne 3 : âge + date */}
+                      <div className="row">
+                        <div className="col-md-6">
+                          <div className="mb-3">
+                            <label htmlFor="twoColAge" className="form-label">
+                              Âge (number)
+                            </label>
+                            <input
+                              type="number"
+                              className="form-control"
+                              id="twoColAge"
+                            />
+                          </div>
+                        </div>
+                        <div className="col-md-6">
+                          <div className="mb-3">
+                            <label
+                              htmlFor="twoColBirthdate"
+                              className="form-label"
+                            >
+                              Date de naissance (date)
+                            </label>
+                            <input
+                              type="date"
+                              className="form-control"
+                              id="twoColBirthdate"
+                            />
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Ligne 4 : rôle + actif */}
+                      <div className="row">
+                        <div className="col-md-6">
+                          <div className="mb-3">
+                            <label htmlFor="twoColRole" className="form-label">
+                              Rôle (select)
+                            </label>
+                            <select className="form-select" id="twoColRole">
+                              <option value="">Choisir...</option>
+                              <option value="admin">Administrateur</option>
+                              <option value="user">Utilisateur</option>
+                              <option value="guest">Invité</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div className="col-md-6 d-flex align-items-center">
+                          <div className="form-check mt-3 mt-md-0">
+                            <input
                               className="form-check-input"
-                              id="customSwitch1"
+                              type="checkbox"
+                              id="twoColIsActive"
+                              defaultChecked
                             />
                             <label
                               className="form-check-label"
-                              htmlFor="customSwitch1"
+                              htmlFor="twoColIsActive"
                             >
-                              Toggle this switch element
+                              Utilisateur actif (checkbox)
                             </label>
                           </div>
                         </div>
                       </div>
-                      <div className="col-md-4">
-                       <div className="mb-3">
-                         
-                          <div className="form-check form-check-inline">
-                            <input
-                              className="form-check-input"
-                              type="radio"
-                              name="gender"
-                              id="genderMale"
-                              value="male"
-                            />
-                            <label
-                              className="form-check-label"
-                              htmlFor="genderMale"
-                            >
-                              Homme
+
+                      <div className="row">
+                        <div className="col-md-6">
+                          <div className="mb-3">
+                            <label className="form-label d-block">
+                              Genre (radio)
                             </label>
+                            <div className="form-check form-check-inline">
+                              <input
+                                className="form-check-input"
+                                type="radio"
+                                name="gender"
+                                id="genderMale"
+                                value="male"
+                              />
+                              <label
+                                className="form-check-label"
+                                htmlFor="genderMale"
+                              >
+                                Homme
+                              </label>
+                            </div>
+                            <div className="form-check form-check-inline">
+                              <input
+                                className="form-check-input"
+                                type="radio"
+                                name="gender"
+                                id="genderFemale"
+                                value="female"
+                              />
+                              <label
+                                className="form-check-label"
+                                htmlFor="genderFemale"
+                              >
+                                Femme
+                              </label>
+                            </div>
                           </div>
-                          <div className="form-check form-check-inline">
-                            <input
-                              className="form-check-input"
-                              type="radio"
-                              name="gender"
-                              id="genderFemale"
-                              value="female"
-                            />
-                            <label
-                              className="form-check-label"
-                              htmlFor="genderFemale"
-                            >
-                              Femme
-                            </label>
+                        </div>
+                        <div className="col-md-6">
+                          <div className="mb-3">
+                            <div className="form-check form-switch" dir="ltr">
+                              <input
+                                type="checkbox"
+                                className="form-check-input"
+                                id="customSwitch1"
+                              />
+                              <label
+                                className="form-check-label"
+                                htmlFor="customSwitch1"
+                              >
+                                Toggle this switch element
+                              </label>
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                  <hr />
-                  <div className="text-end pt-2 pb-4 pe-5">
-                    <button className="btn btn-secondary me-4" type="submit">
-                      Reinitialiser
-                    </button>
-                    <button className="btn btn-primary" type="submit">
-                      Valider
-                    </button>
-                  </div>
-                </form>
+                    <hr />
+
+                    <div className="text-end pt-2 pb-4 pe-5">
+                      <button className="btn btn-secondary me-4" type="submit">
+                        Reinitialiser
+                      </button>
+                      <button className="btn btn-primary" type="submit">
+                        Valider
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+
+              <div className="now mt-4  ">
+                <div className="card">
+                  <form>
+                    <h4 className="ps-4 pt-3 header-title">
+                      Formulaire en trois colonnes
+                    </h4>
+                    <hr className="mb-0" />
+                    <div className="card-body">
+                      {/* Ligne 1 : trois textes */}
+                      <div className="row">
+                        <div className="col-md-4">
+                          <div className="mb-3">
+                            <label
+                              htmlFor="threeColFullName"
+                              className="form-label"
+                            >
+                              Nom complet (text)
+                            </label>
+                            <input
+                              type="text"
+                              className="form-control"
+                              id="threeColFullName"
+                              placeholder="Nom complet"
+                            />
+                          </div>
+                        </div>
+                        <div className="col-md-4">
+                          <div className="mb-3">
+                            <label htmlFor="threeColEmail" className="form-label">
+                              Email (email)
+                            </label>
+                            <input
+                              type="email"
+                              className="form-control"
+                              id="threeColEmail"
+                              placeholder="email@exemple.com"
+                            />
+                          </div>
+                        </div>
+                        <div className="col-md-4">
+                          <div className="mb-3">
+                            <label
+                              htmlFor="threeColPassword"
+                              className="form-label"
+                            >
+                              Mot de passe (password)
+                            </label>
+                            <input
+                              type="password"
+                              className="form-control"
+                              id="threeColPassword"
+                              placeholder="Mot de passe"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      {/* Ligne 2 : téléphone + âge + date */}
+                      <div className="row">
+                        <div className="col-md-4">
+                          <div className="mb-3">
+                            <label htmlFor="threeColPhone" className="form-label">
+                              Téléphone (tel)
+                            </label>
+                            <input
+                              type="tel"
+                              className="form-control"
+                              id="threeColPhone"
+                              placeholder="Ex: +225 01 23 45 67"
+                            />
+                          </div>
+                        </div>
+                        <div className="col-md-4">
+                          <div className="mb-3">
+                            <label htmlFor="threeColAge" className="form-label">
+                              Âge (number)
+                            </label>
+                            <input
+                              type="number"
+                              className="form-control"
+                              id="threeColAge"
+                            />
+                          </div>
+                        </div>
+                        <div className="col-md-4">
+                          <div className="mb-3">
+                            <label
+                              htmlFor="threeColBirthdate"
+                              className="form-label"
+                            >
+                              Date de naissance (date)
+                            </label>
+                            <input
+                              type="date"
+                              className="form-control"
+                              id="threeColBirthdate"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      {/* Ligne 3 : rôle + fichier + actif */}
+                      <div className="row">
+                        <div className="col-md-4">
+                          <div className="mb-3">
+                            <label htmlFor="threeColRole" className="form-label">
+                              Rôle (select)
+                            </label>
+                            <select className="form-select" id="threeColRole">
+                              <option value="">Choisir...</option>
+                              <option value="admin">Administrateur</option>
+                              <option value="user">Utilisateur</option>
+                              <option value="guest">Invité</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div className="col-md-4">
+                          <div className="mb-3">
+                            <label
+                              htmlFor="threeColAvatar"
+                              className="form-label"
+                            >
+                              Avatar (file)
+                            </label>
+                            <input
+                              type="file"
+                              className="form-control"
+                              id="threeColAvatar"
+                            />
+                          </div>
+                        </div>
+                        <div className="col-md-4 d-flex align-items-center">
+                          <div className="form-check mt-3 mt-md-0">
+                            <input
+                              className="form-check-input"
+                              type="checkbox"
+                              id="threeColIsActive"
+                              defaultChecked
+                            />
+                            <label
+                              className="form-check-label"
+                              htmlFor="threeColIsActive"
+                            >
+                              Utilisateur actif (checkbox)
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="row">
+                        <div className="col-md-4">
+                          <div className="mb-3">
+                            <div className="form-check form-switch" dir="ltr">
+                              <input
+                                type="checkbox"
+                                className="form-check-input"
+                                id="customSwitch1"
+                              />
+                              <label
+                                className="form-check-label"
+                                htmlFor="customSwitch1"
+                              >
+                                Toggle this switch element
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="col-md-4">
+                        <div className="mb-3">
+                          
+                            <div className="form-check form-check-inline">
+                              <input
+                                className="form-check-input"
+                                type="radio"
+                                name="gender"
+                                id="genderMale"
+                                value="male"
+                              />
+                              <label
+                                className="form-check-label"
+                                htmlFor="genderMale"
+                              >
+                                Homme
+                              </label>
+                            </div>
+                            <div className="form-check form-check-inline">
+                              <input
+                                className="form-check-input"
+                                type="radio"
+                                name="gender"
+                                id="genderFemale"
+                                value="female"
+                              />
+                              <label
+                                className="form-check-label"
+                                htmlFor="genderFemale"
+                              >
+                                Femme
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <hr />
+                    <div className="text-end pt-2 pb-4 pe-5">
+                      <button className="btn btn-secondary me-4" type="submit">
+                        Reinitialiser
+                      </button>
+                      <button className="btn btn-primary" type="submit">
+                        Valider
+                      </button>
+                    </div>
+                  </form>
+                </div>
               </div>
             </div>
-          </div>
         </div>
       </div>
     </div>

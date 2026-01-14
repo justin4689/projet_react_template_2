@@ -4301,3 +4301,37 @@ div.dataTables_wrapper div.dataTables_filter input {
     right: -12px;
     bottom: 38px;
   }
+.mx-12 {
+  margin-right: 12px !important;
+}
+
+/* Personnalisation forte des couleurs de la table #datatable (écrase Bootstrap/DataTables) */
+#datatable tbody tr.odd td,
+#datatable tbody tr.odd th {
+  background-color: transparent !important;
+  color: #212529 !important;
+}
+#datatable.table.table-striped > tbody > tr:nth-of-type(even) > * {
+  background-color: #F5F7FA !important; /* 2ème, 4ème, 6ème, ... ligne */
+  color: #212529 !important;
+}
+
+.form-check-label {
+  color : #495057 !important;
+}
+
+.btn-primary {
+  background-color: #0099FF !important;
+}
+
+.btn-outline {
+  border-color: #0099FF !important;
+}
+
+.nav-tabs .nav-link:hover,
+.nav-tabs .nav-link:focus {
+  color: #0099ff;
+  border-color: #0099ff #0099ff transparent;
+}
+/*# s
+
